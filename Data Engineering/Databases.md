@@ -37,7 +37,7 @@ It follows that :
 
 CAP Theorem is a concept that a distributed database system can only have 2 of the 3: Consistency, Availability and Partition Tolerance.
 
-![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Data%20Engineering/CAP.png)
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Data%20Engineering/cap.png)
 
 ## Partition Tolerance
 
