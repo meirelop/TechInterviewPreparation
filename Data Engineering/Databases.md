@@ -4,6 +4,8 @@ OLTP (On-line Transaction Processing) is involved in the operation of a particul
 
 OLAP (On-line Analytical Processing) deals with Historical Data or Archival Data. OLAP is characterized by relatively low volume of transactions. Queries are often very complex and involve aggregations. For OLAP systems a response time is an effectiveness measure. OLAP applications are widely used by Data Mining techniques. In OLAP database there is aggregated, historical data, stored in multi-dimensional schemas (usually star schema). Sometime query need to access large amount of data in Management records like what was the profit of your company in last year.
 
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Data%20Engineering/OLTP_OLAP.png)
+
 2 examples scenarios :
 
 * Scenario 1 :
