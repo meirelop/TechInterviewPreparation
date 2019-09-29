@@ -25,13 +25,14 @@ the "total money spend for all users"
 "what is the most sold product"
 This falls into the analytics/business intelligence domain, therefore OLAP is probably more suited.
 
-If you think in terms of "It would be nice to know how/what/how much"..., and that involves all "object" of one or more kind (ex. all the users and most of the products to know the total spent) then OLAP is probably better suited.
+If you think in terms of "It would be nice to know how/what/how much"..., and that involves all "object" of one or more kind (ex. all the users and most of the products to know the total spent) then OLAP is probably better suited.    l9o;/;/;/';;/  '
 
 
 It follows that :
 
 - OLTP databases are meant to be used to do many small transactions, and usually serve as a "single source of truth".
 - OLAP databases on the other hand are more suited for analytics, data mining, less queries but they are usually bigger (they operate on more data, e.g Hadoop).
+
 
 
 
@@ -44,5 +45,12 @@ CAP Theorem is a concept that a distributed database system can only have 2 of t
 ## Partition Tolerance
 
 This condition states that the system continues to run, despite the number of messages being delayed by the network between nodes. A system that is partition-tolerant can sustain any amount of network failure that doesn’t result in a failure of the entire network. Data records are sufficiently replicated across combinations of nodes and networks to keep the system up through intermittent outages. When dealing with modern distributed systems, **Partition Tolerance is not an option. It’s a necessity. Hence, we have to trade between Consistency and Availability.**
+
+## Consistency
+
+This condition states that all nodes see the same data at the same time. Simply put, performing a read operation will return the value of the most recent write operation causing all nodes to return the same data. A system has consistency if a transaction starts with the system in a consistent state, and ends with the system in a consistent state. In this model, a system can (and does) shift into an inconsistent state during a transaction, but the entire transaction gets rolled back if there is an error during any stage in the process.
+
+
+
 
 
