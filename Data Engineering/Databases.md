@@ -69,6 +69,14 @@ If system is Consistent and Partitioned, it cannot be Available by just creating
 Hadoop supports the Availability and Partition Tolerance property. The Consistency property is not supported because only namenode has the information of where the replicas are placed. This information is not available with each and every node of the cluster.
 
 
+## Eventual Consistency vs Strong Consistency
+
+- Traditional relational databases have been designed based on the concept of strong consistency, also called immediate consistency. This means that data viewed immediately after an update will be consistent for all observers of the entity (transactions).
+
+- Eventual consistency is a theoretical guarantee that, provided no new updates to an entity are made, all reads of the entity will eventually return the last updated value. According to which, system do not necessarily reflect the latest values but, rather, the values are cached and replicated across many directories over the system. It takes a certain amount of time to replicate modified values to all servers. Most noSQL databases can offer eventual consistency.
+
+Strong Consistency offers up-to-date data but at the cost of **high latency.**
+While Eventual consistency offers **low latency** but may reply to read requests with **stale data** since all nodes of the database may not have the updated data.
 
 
 
