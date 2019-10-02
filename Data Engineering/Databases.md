@@ -42,13 +42,33 @@ CAP Theorem is a concept that a distributed database system can only have 2 of t
 
 ![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Data%20Engineering/cap.png)
 
-## Partition Tolerance
-
-This condition states that the system continues to run, despite the number of messages being delayed by the network between nodes. A system that is partition-tolerant can sustain any amount of network failure that doesn’t result in a failure of the entire network. Data records are sufficiently replicated across combinations of nodes and networks to keep the system up through intermittent outages. When dealing with modern distributed systems, **Partition Tolerance is not an option. It’s a necessity. Hence, we have to trade between Consistency and Availability.**
 
 ## Consistency
 
 This condition states that all nodes see the same data at the same time. Simply put, performing a read operation will return the value of the most recent write operation causing all nodes to return the same data. A system has consistency if a transaction starts with the system in a consistent state, and ends with the system in a consistent state. In this model, a system can (and does) shift into an inconsistent state during a transaction, but the entire transaction gets rolled back if there is an error during any stage in the process.
+
+## Availability (Sharding)
+
+This condition states that every request gets a response on success/failure. Achieving availability in a distributed system requires that the system remains operational 100% of the time. Every client gets a response, regardless of the state of any individual node in the system. This metric is trivial to measure: either you can submit read/write commands, or you cannot. Hence, the databases are time independent as the nodes need to be available online at all times
+
+
+## Partition Tolerance
+
+This condition states that the system continues to run, despite the number of messages being delayed by the network between nodes. A system that is partition-tolerant can sustain any amount of network failure that doesn’t result in a failure of the entire network. Data records are sufficiently replicated across combinations of nodes and networks to keep the system up through intermittent outages. When dealing with modern distributed systems, **Mostly, Partition Tolerance is not an option. It’s a necessity. Hence, we have to trade between Consistency and Availability.**
+
+
+### CAP: RDBMS
+
+By default, most RDBMS are - CA. All the RDBMS have to have C, because they all support transactions.
+Mostly, they can be CP and CA depending on the configurations.
+If system is Consistent and Partitioned, it cannot be Available by just creating multiple master-slave copies. Since in case when master falls, system needs some downtime to promote slave as a new master
+
+
+### CAP: Hadoop
+
+Hadoop supports the Availability and Partition Tolerance property. The Consistency property is not supported because only namenode has the information of where the replicas are placed. This information is not available with each and every node of the cluster.
+
+
 
 
 
