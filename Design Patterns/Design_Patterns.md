@@ -371,9 +371,34 @@ if __name__ == "__main__":
 
 
 
+## Prototype 
+Prototype is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+Say you have an object, and you want to create an exact copy of it. How would you do it? First, you have to create a new object of the same class. Then you have to go through all the fields of the original object and copy their values over to the new object.
 
+Nice! But there’s a catch. Not all objects can be copied that way because some of the object’s fields may be private and not visible from outside of the object itself.
 
+```java
+// Prototype pattern
+public abstract class Prototype implements Cloneable {
+    public Prototype clone() throws CloneNotSupportedException{
+        return (Prototype) super.clone();
+    }
+}
+	
+public class ConcretePrototype1 extends Prototype {
+    @Override
+    public Prototype clone() throws CloneNotSupportedException {
+        return (ConcretePrototype1)super.clone();
+    }
+}
 
+public class ConcretePrototype2 extends Prototype {
+    @Override
+    public Prototype clone() throws CloneNotSupportedException {
+        return (ConcretePrototype2)super.clone();
+    }
+}
+```
 
 
 
