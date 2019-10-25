@@ -2,7 +2,7 @@ There are two types of modifiers in Java: **access modifiers** and **non-access 
 
 # Access modifiers
 
-![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languages/javaAccessMods.png)
+![Access mods](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languages/javaAccessMods.png)
 
 
 # Non-Access modifiers
