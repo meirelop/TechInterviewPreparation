@@ -90,6 +90,7 @@ def foo(a=None):
 ```
 
 resources:
-https://freecontent.manning.com/mutable-and-immutable-objects/
+https://freecontent.manning.com/mutable-and-immutable-objects/   
+
 https://florimond.dev/en/posts/2018/08/python-mutable-defaults-are-the-source-of-all-evil/
 
