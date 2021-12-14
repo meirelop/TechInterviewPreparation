@@ -36,7 +36,7 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 # Mutable and Immutable objects
 
 **Python data type mutability:**
-![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languagesn/mutability.png)
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languages/mutability.png)
 
 In python variable binds to an object which holds value.
 ````python
@@ -52,10 +52,10 @@ a = 2
 Once immutable object loses bind to previous object, Garbage Collector collects it.
 There is no way to get back to that object. Unless you use mutable object.
 
-![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languagesn/immutable_memory.png)
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languages/immutable_memory.png)
 
 As contrary, mutable objects always save their initial memory location.
-![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languagesn/mutable_memory.png)
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languages/mutable_memory.png)
 
 ```python
 a = ["milk", "eggs"]
