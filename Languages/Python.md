@@ -31,3 +31,65 @@ def myFun(**kwargs):
 # Driver code 
 myFun(first ='Geeks', mid ='for', last='Geeks')  
 ```
+
+
+# Mutable and Immutable objects
+
+**Python data type mutability:**
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languagesn/mutability.png)
+
+In python variable binds to an object which holds value.
+````python
+# variable a binds to an object which holds value 1 in memory
+id(a) # -> 1814233584
+a = 1
+
+# object with value 1 still exists in memory, but we lost binding to it, and now it binds to an object with value 2
+id(a) # -> 1814233616
+a = 2
+
+````
+Once immutable object loses bind to previous object, Garbage Collector collects it.
+There is no way to get back to that object. Unless you use mutable object.
+
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languagesn/immutable_memory.png)
+
+As contrary, mutable objects always save their initial memory location.
+![alt CAP triangle](https://raw.githubusercontent.com/meirelop/TechInterviewPreparation/master/Languagesn/mutable_memory.png)
+
+```python
+a = ["milk", "eggs"]
+id(a) # -> 18142336666
+
+a = ["milk", "eggs", "bread"]
+id(a) # -> 18142336666
+```
+## Do not use mutable default arguments in Python! 
+
+In Python, when passing a mutable value as a default argument in a function, the default argument is mutated anytime that value is mutated.
+
+```python
+def foo(a=["milk", "eggs"]):
+    a.append("bread")
+    return a
+
+
+print(foo())  # ['milk', 'eggs', 'bread'] 
+print(foo())  # ['milk', 'eggs', 'bread', 'bread']
+```
+
+Python "retains" the default value and ties it to the function in some way. Since it is mutated inside the function, it is also mutated as a default. In the end, **we use a different default every time the function is called!**   
+
+**So instead, do this:**
+```python
+def foo(a=None):
+    if a is None:
+        a = []
+    a.append("bread")
+    return a
+```
+
+resources:
+https://freecontent.manning.com/mutable-and-immutable-objects/
+https://florimond.dev/en/posts/2018/08/python-mutable-defaults-are-the-source-of-all-evil/
+
